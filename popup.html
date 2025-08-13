@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Application Tracker Tool</title>
+  <script src="popup.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+      width: 300px;
+    }
+    label {
+      display: block;
+      margin-top: 8px;
+    }
+    input {
+      width: 100%;
+      padding: 5px;
+    }
+    button {
+      margin-top: 10px;
+      width: 100%;
+      padding: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h3>Job Info</h3>
+
+  <label>Company Name:
+    <input type="text" id="company" />
+  </label>
+
+  <label>Job Title:
+    <input type="text" id="title" />
+  </label>
+
+  <label>Location:
+    <input type="text" id="location" />
+  </label>
+
+  <label>University:
+    <input type="text" id="university" value="na" />
+  </label>
+
+  <label>Documents:
+    <input type="text" id="documents" value="cv, cover letter, all docs" />
+  </label>
+
+  <label>Status:
+    <input type="text" id="status" value="Application" />
+  </label>
+
+  <label>Job Link (URL):
+    <input type="text" id="url" readonly />
+  </label>
+
+  <label>Date:
+    <input type="text" id="date" readonly />
+  </label>
+
+  <button id="saveBtn">💾 Save Job</button>
+  <button id="downloadAllBtn">📥 Download All</button>
+</body>
+</html>
