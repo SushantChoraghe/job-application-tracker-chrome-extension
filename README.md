@@ -4,17 +4,19 @@ A lightweight Chrome extension that helps you track your job applications direct
 
 ![Version](https://img.shields.io/badge/version-v1.1.0-blue)
 > 🚀 **Looking for the latest version of this extension?**  
-> 👉 [Click here to view the latest version in the `latest-version` branch](https://github.com/SushantChoraghe/job-application-tracker-chrome-extension/tree/version_1.1)
+> 👉 [Click here to view the latest version_1.1 in the `latest-version` branch](https://github.com/SushantChoraghe/job-application-tracker-chrome-extension/tree/version_1.1)
 
 ---
 
 ## 🚀 Features
 
-- ✅ Extracts job title, company name, and location from the current page
-- ✅ Auto-fills job info into the pop-up form
-- ✅ Stores all job entries locally in your browser (persistent)
-- ✅ Lets you export your applications as a downloadable CSV file
-- ✅ 100% offline — no login or account required
+- ✅ Extracts job title, company name, and location from job listing pages
+- ✅ Auto-fills job info into the pop-up
+- ✅ Edit entries anytime using the **"Edit All"** toggle in the View page
+- ✅ Status dropdowns with colour-coded stages (Application, Interview, Offer, Rejected)
+- ✅ Data saved locally using Chrome Storage
+- ✅ **Export to CSV** from the View Applications page
+- ✅ Works 100% offline — no sign-in needed  
 
 ---
 
@@ -22,11 +24,17 @@ A lightweight Chrome extension that helps you track your job applications direct
 
 You can use this Chrome Extension manually without installing it from the Chrome Web Store:
 
-### 📥 1. Download the Extension
+### 📥 1. Download the Extension or Fork the Repository
 
-- Go to [job-application-tracker-chrome-extension](https://github.com/SushantChoraghe/job-application-tracker-chrome-extension)
-- Click the green **"Code"** button → **"Download ZIP"**
-- Unzip the file to a folder on your computer
+- 🔽 **Download Option:**
+  - Go to [job-application-tracker-chrome-extension](https://github.com/SushantChoraghe/job-application-tracker-chrome-extension)
+  - Click the green **"Code"** button → **"Download ZIP"**
+  - Unzip the file to a folder on your computer
+
+- 🍴 **Fork Option (no need to download):**
+  - Click the **"Fork"** button at the top-right corner of the repository
+  - This will create a copy in your own GitHub account
+  - You can then clone and work on your own version anytime
 
 ### 🧩 2. Load It in Chrome
 
@@ -39,18 +47,47 @@ You can use this Chrome Extension manually without installing it from the Chrome
 
 ### 🧪 3. Use the Extension
 
-- Visit any job post (LinkedIn, company site, etc.)
-- Click the extension icon
-- The popup auto-fills job info (title, company, location)
-- You can fill other fields (status, documents, etc.)
-- Click **“Save”**
-- Click **“Download All”** anytime to export a CSV of all your saved job applications
+✅ Open a job page on a company’s site  
+✅ Click the extension icon  
+✅ Fill or verify job fields → Save  
+✅ Click **“View Applications”** to see, edit, or export your saved jobs  
+
+📌 Note: **Download CSV** is now available on the **View Applications** page only
 
 ### 🗑️ To Uninstall
 
 - Go to `chrome://extensions`
 - Find the “Job Application Tracker Tool”
 - Click **Remove**
+
+---
+
+## 🔄 How to Update the Extension
+
+If you're already using the extension and want to update to a new version:
+
+1. Open `chrome://extensions`  
+2. Remove the old version of the extension  
+3. Delete the old folder from your computer  
+4. Download or clone the updated version  
+5. Click **"Load unpacked"** again and select the new folder
+
+🟢 **Your saved job list will NOT be deleted.**  
+Chrome stores your data separately, so your saved applications will still be available after updating.
+
+---
+
+## ⚠️ Important Notes
+
+🔹 ✅ This extension works on all **company websites**' job listings  
+🔹 ✅ **Job boards** like LinkedIn, Indeed, Glassdoor, etc.  
+🔹 ✅ Make sure to **open the full job listing** (not just side/preview panel)
+
+📸 Example of a preview panel that won’t work:
+
+![Job Preview Warning](images/job-preview-warning.png)
+
+✅ Instead, open the full job post before using the extension.
 
 ---
 
@@ -99,3 +136,5 @@ Built with ❤️ by Sushant Choraghe (https://www.linkedin.com/in/sushantchorag
 Feel free to connect or drop suggestions!
 
 ---
+
+
