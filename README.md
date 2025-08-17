@@ -1,4 +1,4 @@
-# 🧰 Job Application Tracker Tool (Updated Version)
+# 🧰 Job Application Tracker Tool (version_1.1)(v1.1.0)
 
 A lightweight Chrome extension to **track job applications from company career pages** — now with a polished UI, editable fields, and CSV export from the View page.
 
