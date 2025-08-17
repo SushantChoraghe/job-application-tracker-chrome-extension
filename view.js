@@ -1,6 +1,6 @@
 function renderJobs() {
-  chrome.storage.local.get(['jobApplications'], (result) => {
-    const jobs = result.jobApplications || [];
+  chrome.storage.local.get(['jobEntries'], (result) => {
+    const jobs = result.jobEntries || [];
     const tbody = document.querySelector('#jobsTable tbody');
     tbody.innerHTML = '';
 
@@ -30,7 +30,7 @@ function renderJobs() {
         const index = parseInt(e.target.dataset.index);
         if (confirm('Are you sure you want to delete this job entry?')) {
           jobs.splice(index, 1);
-          chrome.storage.local.set({ jobApplications: jobs }, renderJobs);
+          chrome.storage.local.set({ jobEntries: jobs }, renderJobs);
         }
       });
     });
@@ -39,7 +39,7 @@ function renderJobs() {
       select.addEventListener('change', (e) => {
         const index = parseInt(e.target.dataset.index);
         jobs[index].status = e.target.value;
-        chrome.storage.local.set({ jobApplications: jobs });
+        chrome.storage.local.set({ jobEntries: jobs });
       });
     });
   });

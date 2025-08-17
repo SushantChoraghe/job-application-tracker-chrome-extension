@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('location').value = location || '';
       document.getElementById('url').value = tab.url;
       document.getElementById('date').value = formatDate(new Date());
+      document.getElementById('viewBtn').addEventListener('click', () => {
+      chrome.tabs.create({ url: chrome.runtime.getURL('view.html') });
+});
+
     });
   });
 
@@ -20,7 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
     chrome.storage.local.get({ jobEntries: [] }, (data) => {
       const updated = [...data.jobEntries, job];
       chrome.storage.local.set({ jobEntries: updated }, () => {
-        alert("✅ Job saved! You now have " + updated.length + " entries.");
+        document.getElementById('message').textContent = `✅ Job saved! You now have ${updated.length} entries.`;
+        document.getElementById('message').style.color = "#16a34a"; // green
+
       });
     });
   });
