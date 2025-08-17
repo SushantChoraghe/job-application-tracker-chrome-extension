@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Populate fields from active tab
   chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
     if (!tab || !tab.id) {
       document.getElementById('message').textContent = "⚠️ Cannot find active tab.";
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // Save Job
   document.getElementById('saveBtn').addEventListener('click', () => {
     const job = getFormData();
     chrome.storage.local.get({ jobEntries: [] }, (data) => {
@@ -35,59 +37,20 @@ document.addEventListener('DOMContentLoaded', () => {
       chrome.storage.local.set({ jobEntries: updated }, () => {
         document.getElementById('message').textContent =
           `✅ Job saved! You now have ${updated.length} entries.`;
-        document.getElementById('message').style.color = "#16a34a"; // green
+        document.getElementById('message').style.color = "#16a34a";
       });
     });
   });
 
-  document.getElementById('downloadAllBtn').addEventListener('click', () => {
-    chrome.storage.local.get({ jobEntries: [] }, (data) => {
-      if (data.jobEntries.length === 0) {
-        alert("⚠️ No job entries to download.");
-        return;
-      }
 
-      const headers = [
-        "No.",
-        "Date",
-        "Company Name",
-        "University Name",
-        "Location",
-        "Title",
-        "Documents",
-        "Status",
-        "Link"
-      ];
 
-      const rows = data.jobEntries.map((entry, index) => [
-        index + 1,
-        entry.date,
-        entry.company,
-        entry.university,
-        entry.location,
-        entry.title,
-        entry.documents,
-        entry.status,
-        entry.url
-      ]);
-
-      const csv = [headers, ...rows].map(row => row.map(escapeCSV).join(",")).join("\n");
-      const blob = new Blob([csv], { type: "text/csv" });
-      const downloadUrl = URL.createObjectURL(blob);
-
-      chrome.downloads.download({
-        url: downloadUrl,
-        filename: "job-applications.csv"
-      });
-    });
-  });
-
+  // View Applications
   document.getElementById('viewBtn').addEventListener('click', () => {
     chrome.tabs.create({ url: chrome.runtime.getURL('view.html') });
   });
 });
 
-// Helper functions
+// Helpers
 function getFormData() {
   return {
     company: document.getElementById('company').value,

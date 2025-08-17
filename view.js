@@ -111,3 +111,56 @@ function showMessage(text, color = "#10b981") {
 }
 
 renderJobs();
+
+document.getElementById('downloadBtn').addEventListener('click', () => {
+  chrome.storage.local.get({ jobEntries: [] }, (data) => {
+    const jobs = data.jobEntries || [];
+
+    if (jobs.length === 0) {
+      alert("⚠️ No job entries to download.");
+      return;
+    }
+
+    const headers = [
+      "No.",
+      "Date",
+      "Company",
+      "University",
+      "Location",
+      "Title",
+      "Documents",
+      "Status",
+      "Link"
+    ];
+
+    const rows = jobs.map((job, index) => [
+      index + 1,
+      job.date,
+      job.company,
+      job.university,
+      job.location,
+      job.title,
+      job.documents,
+      job.status,
+      job.url
+    ]);
+
+    const csv = [headers, ...rows]
+      .map(row => row.map(escapeCSV).join(","))
+      .join("\n");
+
+    const blob = new Blob([csv], { type: "text/csv" });
+    const downloadUrl = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = downloadUrl;
+    a.download = "job-applications.csv";
+    a.click();
+  });
+});
+
+function escapeCSV(value) {
+  if (typeof value !== "string") return value;
+  return `"${value.replace(/"/g, '""')}"`;
+}
+

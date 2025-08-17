@@ -6,52 +6,60 @@
   <title>Saved Job Applications</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f8fafc;
+      background-color: #f6f9fc;
       color: #1e293b;
-      margin: 0;
-      padding: 20px;
+      padding: 40px 20px;
     }
 
     h2 {
       text-align: center;
+      font-size: 26px;
+      font-weight: 700;
       margin-bottom: 12px;
-      font-size: 24px;
-      font-weight: 600;
     }
 
     .top-bar {
       display: flex;
       justify-content: center;
-      margin-bottom: 20px;
+      margin-bottom: 24px;
     }
 
     .edit-toggle-btn {
-      background-color: #6366f1;
+      background: linear-gradient(to right, #6366f1, #7c3aed);
       color: white;
       border: none;
-      padding: 10px 16px;
+      padding: 10px 18px;
       font-size: 14px;
-      border-radius: 8px;
+      font-weight: 600;
+      border-radius: 10px;
       cursor: pointer;
+      box-shadow: 0 2px 6px rgba(99, 102, 241, 0.4);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
     }
 
     .edit-toggle-btn:hover {
-      background-color: #4f46e5;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
     }
 
     .message {
       text-align: center;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
+      padding: 10px 16px;
+      font-size: 14px;
       font-weight: 500;
+      border-radius: 8px;
+      background-color: #dcfce7;
+      color: #16a34a;
       display: none;
-      padding: 10px 14px;
-      border-radius: 6px;
-      background-color: #d1fae5;
-      color: #047857;
     }
 
     .message.show {
@@ -60,45 +68,53 @@
 
     .table-container {
       overflow-x: auto;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+      background-color: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 700px;
+      min-width: 900px;
     }
 
     th, td {
-      padding: 12px 16px;
+      padding: 14px 18px;
       border-bottom: 1px solid #e2e8f0;
       font-size: 14px;
     }
 
     th {
-      background-color: #f1f5f9;
+      background-color: #f9fafb;
       text-align: left;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    tr:hover {
+      background-color: #f1f5f9;
     }
 
     input.edit-input {
       width: 100%;
-      padding: 6px 8px;
-      font-size: 13px;
+      padding: 8px 10px;
+      font-size: 14px;
       border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      background-color: #f9fafb;
+      border-radius: 8px;
+      background-color: #f8fafc;
     }
 
     .delete-btn {
       background-color: #ef4444;
       color: white;
       border: none;
-      padding: 6px 12px;
-      border-radius: 6px;
-      cursor: pointer;
+      padding: 8px 14px;
+      border-radius: 8px;
       font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
     }
 
     .delete-btn:hover {
@@ -107,17 +123,37 @@
 
     .status-select {
       padding: 6px 10px;
-      border-radius: 6px;
+      border-radius: 9999px;
       font-size: 13px;
       border: 1px solid #cbd5e1;
       background-color: #f9fafb;
       color: #1e293b;
+      min-width: 110px;
     }
 
-    .status-color-Application { background-color: #dbeafe; color: #1d4ed8; }
-    .status-color-Interview { background-color: #fef3c7; color: #b45309; }
-    .status-color-Offer { background-color: #d1fae5; color: #047857; }
-    .status-color-Rejected { background-color: #fee2e2; color: #b91c1c; }
+    .status-color-Application {
+      background-color: #e0f2fe;
+      color: #0284c7;
+      font-weight: 600;
+    }
+
+    .status-color-Interview {
+      background-color: #fef3c7;
+      color: #b45309;
+      font-weight: 600;
+    }
+
+    .status-color-Offer {
+      background-color: #d1fae5;
+      color: #047857;
+      font-weight: 600;
+    }
+
+    .status-color-Rejected {
+      background-color: #fee2e2;
+      color: #b91c1c;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
@@ -125,6 +161,8 @@
 
   <div class="top-bar">
     <button id="toggleEditBtn" class="edit-toggle-btn">✏️ Edit All</button>
+    <button id="downloadBtn" class="edit-toggle-btn" style="margin-left: 10px;">📥 Download CSV</button>
+
   </div>
 
   <div id="statusMsg" class="message"></div>
