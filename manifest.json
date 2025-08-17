@@ -1,11 +1,26 @@
 {
   "manifest_version": 3,
-  "name": "Job Tracker",
+  "name": "Job Application Tracker",
   "version": "1.0",
-  "permissions": ["storage", "downloads", "tabs", "scripting"],
-  "host_permissions": ["<all_urls>"],
+  "description": "Track and manage your job applications from any site.",
+  "permissions": [
+    "storage",
+    "downloads",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_title": "Open Job Tracker",
+    "default_icon": {
+      "16": "logo.png",
+      "32": "logo.png",
+      "48": "logo.png",
+      "128": "logo.png"
+    }
   },
   "background": {
     "service_worker": "background.js"
@@ -15,5 +30,11 @@
       "matches": ["<all_urls>"],
       "js": ["content.js"]
     }
-  ]
+  ],
+  "icons": {
+    "16": "logo.png",
+    "32": "logo.png",
+    "48": "logo.png",
+    "128": "logo.png"
+  }
 }
