@@ -1,104 +1,35 @@
-# 🧰 Job Application Tracker Tool (version_1.1)(v1.1.0)
+# 🔄 Job Application Tracker Tool — v1.1.0 (Updated Branch)
 
-A lightweight Chrome extension to **track job applications from company career pages** — now with a polished UI, editable fields, and CSV export from the View page.
-
----
-
-## 🚀 Features
-
-⭐ Extracts job title, company name, and location from job listing pages  
-⭐ Auto-fills job info into the pop-up  
-⭐ Edit entries anytime using the **"Edit All"** toggle in the View page  
-⭐ Status dropdowns with colour-coded stages (Application, Interview, Offer, Rejected)  
-⭐ Data saved locally using Chrome Storage  
-⭐ **Export to CSV** from the View Applications page  
-⭐ Works 100% offline — no sign-in needed  
+This is the **latest improved version** of the Job Application Tracker Chrome extension.
 
 ---
 
-## ⚠️ Important Notes
+## ✅ What’s New in v1.1.0
 
-🔹 ✅ This extension works on all **company websites**' job listings  
-🔹 ✅ **Job boards** like LinkedIn, Indeed, Glassdoor, etc.  
-🔹 ✅ Make sure to **open the full job listing** (not just side/preview panel)
-
-📸 Example of a preview panel that won’t work:
-
-![Job Preview Warning](images/job-preview-warning.png)
-
-✅ Instead, open the full job post before using the extension.
+- 🔧 **Moved the "Download All" button** from the popup to the "View Applications" page  
+- 🧹 Cleaned UI and reduced clutter in the popup  
+- 🎯 Improved performance and message handling  
+- ✏️ Added inline **edit mode** in the View page  
+- 📸 Added instructions to avoid preview panels (for example, on LinkedIn)  
 
 ---
 
-## 🧩 Installation (Manual via GitHub)
+## 📦 How to Use This Version
 
-### 📥 1. Download This Branch
+1. Go to [`chrome://extensions`](chrome://extensions)  
+2. Remove your previous version (if installed)  
+3. Download or clone this branch (`version_1.1`)  
+4. Click **"Load unpacked"** and select the folder
 
-✅ Click the dropdown beside the branch name and select the `new-version` branch  
-✅ Click **Code → Download ZIP**  
-✅ Extract the ZIP to a folder
-
-### 🧩 2. Load It in Chrome
-
-✅ Go to `chrome://extensions`  
-✅ Enable **Developer Mode**  
-✅ Click **Load Unpacked** and select the extracted folder  
-
-🎉 Extension icon will appear in your browser!
+✅ Your **saved job applications will remain intact**  
+✅ Full usage instructions, features, and setup are available in the main branch's [README](https://github.com/SushantChoraghe/job-application-tracker-chrome-extension)
 
 ---
 
-### 🧪 3. Use the Extension
+## 📌 Tip: Folder Selection
 
-✅ Open a job page on a company’s site  
-✅ Click the extension icon  
-✅ Fill or verify job fields → Save  
-✅ Click **“View Applications”** to see, edit, or export your saved jobs  
+If you extracted the ZIP file, make sure you're selecting the folder that directly contains the `manifest.json` file when loading it in Chrome.
 
-📌 Note: **Download CSV** is now available on the **View Applications** page only
-
----
-
-## 🔄 Updating the Extension
-
-If you're already using this:
-
-1. Download or pull this branch  
-2. Go to `chrome://extensions`  
-3. Click **Reload** on the extension  
-✅ Data will remain intact
-
----
-
-## ✨ Fields Tracked
-
-- Company Name  
-- Job Title  
-- Location  
-- University Name (optional)  
-- Documents Sent  
-- Status  
-- Application Date  
-- Job URL  
-
----
-
-## 🛠️ Built With
-
-- HTML, CSS, JS  
-- Chrome Extensions API v3  
-- Chrome Storage API  
-- CSV Export  
-
----
-
-## 📄 License
-
-MIT License
-
----
-
-## 📬 Contact
-
-Built by [Sushant Choraghe](https://www.linkedin.com/in/sushantchoraghe)  
-Feel free to connect or suggest features!
+```bash
+❌ Wrong: job-application-tracker-version_1.1/job-application-tracker-version_1.1/manifest.json
+✅ Right: job-application-tracker-version_1.1/manifest.json
