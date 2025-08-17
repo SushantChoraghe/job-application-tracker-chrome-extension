@@ -1,3 +1,7 @@
+> 🚀 **Looking for the latest version of this extension?**  
+> 👉 [Click here to view the latest version in the `latest-version` branch](https://github.com/SushantChoraghe/job-application-tracker-chrome-extension/tree/version_1.1)
+
+
 # 🧰 Job Application Tracker Tool (Chrome Extension)
 
 A lightweight Chrome extension that helps you track your job applications directly from job listing pages on LinkedIn, company websites, or job boards — all with a single click.
