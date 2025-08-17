@@ -1,12 +1,10 @@
 {
-  "manifest_version": 3,
-  "name": "Job Application Tracker",
+  "name": "Job Tracker",
   "version": "1.0",
-  "description": "Track and manage your job applications.",
-  "permissions": ["storage", "tabs", "downloads", "scripting"],
+  "manifest_version": 3,
+  "permissions": ["storage", "downloads", "tabs", "scripting"],
   "action": {
-    "default_popup": "popup.html",
-    "default_title": "Job Tracker"
+    "default_popup": "popup.html"
   },
   "background": {
     "service_worker": "background.js"
@@ -14,8 +12,7 @@
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "run_at": "document_idle"
+      "js": ["content.js"]
     }
   ],
   "host_permissions": ["<all_urls>"]

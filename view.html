@@ -3,32 +3,147 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>View Applications</title>
+  <title>Saved Job Applications</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    /* Basic table styles (keep your own if you prefer) */
-    body { font-family: Arial, sans-serif; padding: 10px; }
-    table { width: 100%; border-collapse: collapse; }
-    th, td { padding: 8px; border: 1px solid #ccc; text-align: left; }
-    th { background-color: #f0f0f0; }
-    .delete-btn { background-color: red; color: white; border: none; padding: 4px 8px; cursor: pointer; }
-    .status-select { width: 100%; }
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 12px;
+      font-size: 24px;
+      font-weight: 600;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+
+    .edit-toggle-btn {
+      background-color: #6366f1;
+      color: white;
+      border: none;
+      padding: 10px 16px;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .edit-toggle-btn:hover {
+      background-color: #4f46e5;
+    }
+
+    .message {
+      text-align: center;
+      margin-bottom: 16px;
+      font-weight: 500;
+      display: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      background-color: #d1fae5;
+      color: #047857;
+    }
+
+    .message.show {
+      display: inline-block;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 700px;
+    }
+
+    th, td {
+      padding: 12px 16px;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 14px;
+    }
+
+    th {
+      background-color: #f1f5f9;
+      text-align: left;
+    }
+
+    input.edit-input {
+      width: 100%;
+      padding: 6px 8px;
+      font-size: 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      background-color: #f9fafb;
+    }
+
+    .delete-btn {
+      background-color: #ef4444;
+      color: white;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    .delete-btn:hover {
+      background-color: #dc2626;
+    }
+
+    .status-select {
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 13px;
+      border: 1px solid #cbd5e1;
+      background-color: #f9fafb;
+      color: #1e293b;
+    }
+
+    .status-color-Application { background-color: #dbeafe; color: #1d4ed8; }
+    .status-color-Interview { background-color: #fef3c7; color: #b45309; }
+    .status-color-Offer { background-color: #d1fae5; color: #047857; }
+    .status-color-Rejected { background-color: #fee2e2; color: #b91c1c; }
   </style>
 </head>
 <body>
-  <h2>Saved Job Applications</h2>
-  <table id="jobsTable">
-    <thead>
-      <tr>
-        <th>No.</th>
-        <th>Company</th>
-        <th>Title</th>
-        <th>Location</th>
-        <th>Status</th>
-        <th>Delete</th>
-      </tr>
-    </thead>
-    <tbody></tbody>
-  </table>
+  <h2>📋 Saved Job Applications</h2>
+
+  <div class="top-bar">
+    <button id="toggleEditBtn" class="edit-toggle-btn">✏️ Edit All</button>
+  </div>
+
+  <div id="statusMsg" class="message"></div>
+
+  <div class="table-container">
+    <table id="jobsTable">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Company</th>
+          <th>Title</th>
+          <th>Location</th>
+          <th>Status</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
 
   <script src="view.js"></script>
 </body>
