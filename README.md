@@ -1,4 +1,4 @@
-# 🧰 Job Application Tracker Tool (Chrome Extension)
+# 🧰 Job Application Tracker Tool (Web Browser Extension)
 
 A lightweight Chrome extension that helps you track your job applications directly from job listing pages on LinkedIn, company websites, or job boards — all with a single click.
 
