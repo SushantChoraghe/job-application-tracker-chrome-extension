@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Step 1: Get job info using messaging
   chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
     chrome.tabs.sendMessage(tab.id, { type: "SCRAPE_JOB_INFO" }, (response) => {
-      const { title, company, location } = response || {};
+      if (!response) {
+        document.getElementById('message').textContent = "⚠️ Couldn't fetch job info.";
+        return;
+      }
+
+      const { title, company, location } = response;
       document.getElementById('title').value = title || '';
       document.getElementById('company').value = company || '';
       document.getElementById('location').value = location || '';
@@ -11,7 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Step 2: Save job entry
   document.getElementById('saveBtn').addEventListener('click', () => {
     const job = getFormData();
     chrome.storage.local.get({ jobEntries: [] }, (data) => {
@@ -22,7 +25,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Step 3: Download all entries as CSV
   document.getElementById('downloadAllBtn').addEventListener('click', () => {
     chrome.storage.local.get({ jobEntries: [] }, (data) => {
       if (data.jobEntries.length === 0) {
@@ -66,7 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// Helper functions
 function getFormData() {
   return {
     company: document.getElementById('company').value,

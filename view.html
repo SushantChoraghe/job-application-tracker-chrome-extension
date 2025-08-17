@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>View Applications</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 10px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 8px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #f0f0f0;
+    }
+    .delete-btn {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 4px 8px;
+      cursor: pointer;
+    }
+    .status-select {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <h2>Saved Job Applications</h2>
+  <table id="jobsTable">
+    <thead>
+      <tr>
+        <th>No.</th>
+        <th>Company</th>
+        <th>Title</th>
+        <th>Location</th>
+        <th>Status</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="view.js"></script>
+</body>
+</html>

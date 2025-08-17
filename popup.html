@@ -13,85 +13,104 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f8f9fc;
+      background: #f4f6fa;
       color: #333;
       padding: 20px;
       margin: 0;
-      width: 320px;
+      width: 360px;
     }
 
     h3 {
-      margin-bottom: 20px;
-      font-size: 20px;
+      margin-bottom: 24px;
+      font-size: 22px;
       font-weight: 600;
       text-align: center;
-      color: #2c3e50;
+      color: #1e293b;
     }
 
     label {
       display: block;
-      margin-bottom: 15px;
+      margin-bottom: 16px;
       font-size: 14px;
       font-weight: 500;
-      color: #555;
+      color: #475569;
     }
 
     input[type="text"] {
       width: 100%;
-      padding: 10px;
-      margin-top: 5px;
-      border: 1px solid #dcdfe6;
-      border-radius: 8px;
+      padding: 10px 12px;
+      margin-top: 6px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
       background-color: #fff;
-      transition: border-color 0.3s ease;
+      font-size: 14px;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
 
     input[type="text"]:focus {
-      border-color: #007bff;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
       outline: none;
+    }
+
+    input[readonly] {
+      background-color: #f1f5f9;
+      color: #94a3b8;
+      cursor: not-allowed;
     }
 
     button {
       width: 100%;
       padding: 12px;
-      margin-top: 12px;
+      margin-top: 14px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: 600;
-      font-size: 14px;
+      font-size: 15px;
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
 
     #saveBtn {
-      background-color: #007bff;
+      background-color: #3b82f6;
       color: #fff;
     }
 
     #saveBtn:hover {
-      background-color: #0069d9;
+      background-color: #2563eb;
       transform: translateY(-1px);
     }
 
     #downloadAllBtn {
-      background-color: #28a745;
+      background-color: #10b981;
       color: #fff;
     }
 
     #downloadAllBtn:hover {
-      background-color: #218838;
+      background-color: #059669;
       transform: translateY(-1px);
     }
 
-    input[readonly] {
-      background-color: #f1f3f5;
-      color: #6c757d;
-      cursor: not-allowed;
+    .view-btn {
+      background-color: #e2e8f0;
+      color: #1e293b;
+    }
+
+    .view-btn:hover {
+      background-color: #cbd5e1;
+      transform: translateY(-1px);
+    }
+
+    #message {
+      margin-bottom: 12px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #ef4444;
     }
   </style>
 </head>
 <body>
-  <h3>Job Info</h3>
+  <h3>📌 Job Application</h3>
 
   <label>Company Name:
     <input type="text" id="company" />
@@ -125,7 +144,10 @@
     <input type="text" id="date" readonly />
   </label>
 
+  <div id="message"></div>
+
   <button id="saveBtn">💾 Save Job</button>
   <button id="downloadAllBtn">📥 Download All</button>
+  <button class="view-btn" onclick="window.open('view.html')">📑 View Applications</button>
 </body>
 </html>
