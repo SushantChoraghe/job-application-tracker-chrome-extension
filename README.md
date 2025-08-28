@@ -69,18 +69,56 @@ Note: **Download CSV** is now available on the **View Applications** page only
 
 ---
 
-## How to Update the Extension
+## How to Update the Extension Without Losing Saved Job Entries
 
-If you're already using the extension and want to update to a new version:
+When updating this extension manually via **Load unpacked**, it’s important to preserve your saved job applications stored in Chrome’s local storage.
 
-1. Open `chrome://extensions`  
-2. Remove the old version of the extension  
-3. Delete the old folder from your computer  
-4. Download or clone the updated version  
-5. Click **"Load unpacked"** again and select the new folder
+Chrome stores this data based on the extension’s **ID**, which is tied to the **exact folder path** from which the extension was originally loaded.
 
-**Your saved job list will NOT be deleted.**  
-Chrome stores your data separately, so your saved applications will still be available after updating.
+---
+
+### Safe Update Instructions
+
+To update the extension while keeping your saved data:
+
+1. Open Chrome and navigate to `chrome://extensions`
+2. **Do not click “Remove”** on the existing extension — this will permanently delete all saved job data
+3. Open the original folder from which the extension was first loaded (e.g., `job-tracker/`)
+4. Replace all files in that folder with the updated version’s files
+5. In Chrome, click the **Reload icon (🔁)** on the extension card to apply the changes
+
+This method keeps the same extension ID and all previously saved data remains intact.
+
+---
+
+### Folder Naming Guidance
+
+If you downloaded the new version into a different folder (such as `job-tracker-v1.2/`), do **not** load it directly.
+
+Instead:
+
+- Rename it to the original folder name (e.g., `job-tracker/`)  
+  **or**
+- Copy the updated files into the originally loaded folder
+
+Only then should you reload the extension using the Reload button in `chrome://extensions`.
+
+---
+
+### Avoid These Mistakes
+
+| Action                        | Result                          |
+|------------------------------|---------------------------------|
+| Removing the extension       | Deletes all saved job data      |
+| Loading from a new folder    | Creates a new extension ID      |
+| Renaming or moving the folder| Treated as a new extension      |
+
+---
+
+### Optional Backup Recommendation
+
+Before making updates, it is recommended to click **“Download CSV”** on the View Applications page to create a local backup of your job entries.
+
 
 ---
 
