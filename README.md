@@ -2,14 +2,16 @@
 
 A lightweight Chrome extension that helps you track your job applications directly from job listing pages on LinkedIn, company websites, or job boards — all with a single click.
 
+
+
 ![Version](https://img.shields.io/badge/version-v1.2.0-blue) 
-> `version_1.2` is now live! Includes clickable job URLs, improved popup syncing, and better CSV export.  
-> [Click here to view the latest version_1.1 in the  `version_1.2` branch]((https://github.com/SushantChoraghe/job-application-tracker-chrome-extension/tree/version_1.2))
+> 📌 Latest `version_1.2` is now live! Includes clickable job URLs, improved popup syncing, and better CSV export. (Stable and Recommended)
+> [Click here to view the latest version_1.2 in the  `version_1.2` branch](https://github.com/SushantChoraghe/job-application-tracker-chrome-extension/tree/version_1.2)
 
 
 ![Version](https://img.shields.io/badge/version-v1.1.0-blue)
-> **Looking for the latest version of this extension?**  
-> [Click here to view the latest version_1.1 in the `latest-version` branch](https://github.com/SushantChoraghe/job-application-tracker-chrome-extension/tree/version_1.1)
+>  `version_1.1` is now live!   
+> [Click here to view the version_1.1 in the `version_1.1` branch](https://github.com/SushantChoraghe/job-application-tracker-chrome-extension/tree/version_1.1)
 
 ---
 
