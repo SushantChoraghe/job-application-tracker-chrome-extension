@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Populate fields from active tab
   chrome.tabs.query({ active: true, currentWindow: true }, ([tab]) => {
     if (!tab || !tab.id) {
       document.getElementById('message').textContent = "⚠️ Cannot find active tab.";
@@ -24,12 +23,11 @@ document.addEventListener('DOMContentLoaded', () => {
       document.getElementById('title').value = title || '';
       document.getElementById('company').value = company || '';
       document.getElementById('location').value = location || '';
-      document.getElementById('url').value = tab.url;
+      document.getElementById('link').value = tab.url;
       document.getElementById('date').value = formatDate(new Date());
     });
   });
 
-  // Save Job
   document.getElementById('saveBtn').addEventListener('click', () => {
     const job = getFormData();
     chrome.storage.local.get({ jobEntries: [] }, (data) => {
@@ -37,20 +35,15 @@ document.addEventListener('DOMContentLoaded', () => {
       chrome.storage.local.set({ jobEntries: updated }, () => {
         document.getElementById('message').textContent =
           `✅ Job saved! You now have ${updated.length} entries.`;
-        document.getElementById('message').style.color = "#16a34a";
       });
     });
   });
 
-
-
-  // View Applications
   document.getElementById('viewBtn').addEventListener('click', () => {
     chrome.tabs.create({ url: chrome.runtime.getURL('view.html') });
   });
 });
 
-// Helpers
 function getFormData() {
   return {
     company: document.getElementById('company').value,
@@ -59,16 +52,11 @@ function getFormData() {
     university: document.getElementById('university').value,
     documents: document.getElementById('documents').value,
     status: document.getElementById('status').value,
-    url: document.getElementById('url').value,
+    link: document.getElementById('link').value,
     date: document.getElementById('date').value
   };
 }
 
 function formatDate(d) {
   return `${String(d.getDate()).padStart(2, '0')}.${String(d.getMonth() + 1).padStart(2, '0')}.${d.getFullYear()}`;
-}
-
-function escapeCSV(value) {
-  if (typeof value !== 'string') return value;
-  return `"${value.replace(/"/g, '""')}"`;
 }

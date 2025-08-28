@@ -7,10 +7,7 @@
   <script src="popup.js" defer></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
+    * { box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
       background: #f4f6fa;
@@ -19,7 +16,6 @@
       margin: 0;
       width: 360px;
     }
-
     h3 {
       margin-bottom: 24px;
       font-size: 22px;
@@ -27,7 +23,6 @@
       text-align: center;
       color: #1e293b;
     }
-
     label {
       display: block;
       margin-bottom: 16px;
@@ -35,7 +30,6 @@
       font-weight: 500;
       color: #475569;
     }
-
     input[type="text"] {
       width: 100%;
       padding: 10px 12px;
@@ -46,19 +40,11 @@
       font-size: 14px;
       transition: border-color 0.3s ease, box-shadow 0.3s ease;
     }
-
-    input[type="text"]:focus {
-      border-color: #3b82f6;
-      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
-      outline: none;
-    }
-
     input[readonly] {
       background-color: #f1f5f9;
       color: #94a3b8;
       cursor: not-allowed;
     }
-
     button {
       width: 100%;
       padding: 12px;
@@ -70,42 +56,27 @@
       cursor: pointer;
       transition: background-color 0.3s ease, transform 0.2s ease;
     }
-
     #saveBtn {
       background-color: #3b82f6;
       color: #fff;
     }
-
     #saveBtn:hover {
       background-color: #2563eb;
       transform: translateY(-1px);
     }
-
-    #downloadAllBtn {
-      background-color: #10b981;
-      color: #fff;
-    }
-
-    #downloadAllBtn:hover {
-      background-color: #059669;
-      transform: translateY(-1px);
-    }
-
     .view-btn {
       background-color: #e2e8f0;
       color: #1e293b;
     }
-
     .view-btn:hover {
       background-color: #cbd5e1;
       transform: translateY(-1px);
     }
-
     #message {
       margin-bottom: 12px;
       font-size: 14px;
       font-weight: 500;
-      color: #ef4444;
+      color: #16a34a;
     }
   </style>
 </head>
@@ -137,7 +108,7 @@
   </label>
 
   <label>Job Link (URL):
-    <input type="text" id="url" readonly />
+    <input type="text" id="link" readonly />
   </label>
 
   <label>Date:
@@ -148,10 +119,9 @@
 
   <button id="saveBtn">💾 Save Job</button>
   <button class="view-btn" id="viewBtn">📑 View Applications</button>
-  <p style="text-align:center; margin-top: 8px; font-size: 13px; color: #64748b;">
-  Want to download your entries? Click "📑 View Applications".
-  </p>
 
-  
+  <p style="text-align:center; margin-top: 8px; font-size: 13px; color: #64748b;">
+    Want to download your entries? Click "📑 View Applications".
+  </p>
 </body>
 </html>
